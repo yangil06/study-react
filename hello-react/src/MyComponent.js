@@ -6,11 +6,11 @@
 //   return <div>Hi, my name is {props.name}</div>;
 // };
 
-const MyComponent = (props) => (
+//prop is replaced with destructing assignment
+const MyComponent = ({ name, children, default_prop }) => (
   <div>
-    Hi, My name is {props.name}. This is to test children prop :{' '}
-    {props.children}
-    and, this is test for default prop 'default_prop : ' {props.default_prop}
+    Hi, My name is {name}. This is to test children prop : {children}
+    and, this is test for default prop 'default_prop : ' {default_prop}
   </div>
 );
 
