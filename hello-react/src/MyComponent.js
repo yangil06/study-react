@@ -10,7 +10,13 @@ const MyComponent = (props) => (
   <div>
     Hi, My name is {props.name}. This is to test children prop :{' '}
     {props.children}
+    and, this is test for default prop 'default_prop : ' {props.default_prop}
   </div>
 );
+
+MyComponent.defaultProps = {
+  name: 'test',
+  default_prop: 'default_prop',
+};
 
 export default MyComponent;
