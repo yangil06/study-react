@@ -30,6 +30,21 @@ MyComponent.propTypes = {
   name: PropTypes.string,
   designatedType: PropTypes.string,
   favoriteNumber: PropTypes.number.isRequired,
+  arr: PropTypes.array,
+  arrayOf: PropTypes.arrayOf(PropTypes.number),
+  bool: PropTypes.bool,
+  func: PropTypes.func,
+  num: PropTypes.number,
+  obj: PropTypes.object,
+  str: PropTypes.string,
+  sym: PropTypes.symbol,
+  node: PropTypes.node,
+  instanceof: PropTypes.instanceOf(MyComponent),
+  oneof: PropTypes.oneof(['dog', 'cat']),
+  oneoftype: PropTypes.oneoftype([PropTypes.number, PropTypes.string]),
+  objectof: PropTypes.number,
+  shape: PropTypes.shape({ name: PropTypes.string, num: PropTypes.number }),
+  anything: PropTypes.any,
 };
 
 export default MyComponent;
