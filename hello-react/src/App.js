@@ -8,7 +8,7 @@ import MyComponent from './MyComponent';
 
 //class App extends Component {
 //  render() {
-function App() {
+const App = () => {
   const number = 0;
   const undefined_ = undefined;
 
@@ -41,8 +41,17 @@ function App() {
         {true}
         <div style={style}>{1}</div>
         <div className="react">className 테스트2</div>
-        <div>{MyComponent}</div>
-        <MyComponent name="hangil">children2</MyComponent>
+        {/*resolved for functions are not valid as a React child*/}
+        <div>
+          {MyComponent({
+            name: 'hangil2',
+            designatedType: 'designated',
+            children: 'children',
+          })}
+        </div>
+        <MyComponent name="hangil" designatedType={1}>
+          children2
+        </MyComponent>
         {/*Component는 태그로 엮어야만 나오네?? 함수라서 실행을 시켜줘야 하기 때문인건가..? 객체는 그냥
         나오는 듯 한데..
         그런가부당 MyComponent() 하니까 출력이 되네..
@@ -54,7 +63,7 @@ function App() {
       </header>
     </div>
   );
-}
+};
 //}
 
 export default App;
