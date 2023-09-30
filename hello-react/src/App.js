@@ -47,9 +47,10 @@ const App = () => {
             name: 'hangil2',
             designatedType: 'designated',
             children: 'children',
+            favoriteNumber: 7,
           })}
         </div>
-        <MyComponent name="hangil" designatedType={'1'}>
+        <MyComponent name="hangil" designatedType={'1'} favoriteNumber={7}>
           children2
         </MyComponent>
         {/*Component는 태그로 엮어야만 나오네?? 함수라서 실행을 시켜줘야 하기 때문인건가..? 객체는 그냥
