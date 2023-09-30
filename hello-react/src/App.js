@@ -42,7 +42,7 @@ function App() {
         <div style={style}>{1}</div>
         <div className="react">className 테스트2</div>
         <div>{MyComponent}</div>
-        <MyComponent name="hangil" />
+        <MyComponent name="hangil">children2</MyComponent>
         {/*Component는 태그로 엮어야만 나오네?? 함수라서 실행을 시켜줘야 하기 때문인건가..? 객체는 그냥
         나오는 듯 한데..
         그런가부당 MyComponent() 하니까 출력이 되네..
