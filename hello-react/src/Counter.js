@@ -33,9 +33,7 @@ class Counter extends Component {
           onClick={() => {
             this.setState((prevState, prop) => {
               const { number, fixedNumber } = prevState;
-              console.log(
-                `prevState.number = ${number}, fixedNum = ${fixedNumber}`
-              );
+              console.log('prevState = ' + prevState); //이때는 any였나보다. 안나오는걸 보니
               console.log('prop = ' + prop);
               return { number: prevState.number + 1 };
             });
@@ -50,9 +48,16 @@ class Counter extends Component {
             });
 
             //이제 +3
-            this.setState((prevState) => ({
-              number: prevState.number + 1,
-            }));
+            const callback = () => {
+              console.log('방금 setState 가 호출되었습니다.');
+              console.log(this.state); //이때는 나오는걸 보니..
+            };
+            this.setState(
+              (prevState) => ({
+                number: prevState.number + 1,
+              }),
+              callback
+            );
           }}
         >
           +1
