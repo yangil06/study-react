@@ -11,10 +11,6 @@ const Say = () => {
   //그렇다면 배열이나 객체를 업데이트 하려면 어떡할까?
   const [arr, setArr] = useState([1, 2]);
 
-  //여기는 state을 부를 수 있는 컨텍스트가 아니라서 오류남
-  const arr2 = [...this.state.arr];
-  setArr(arr2);
-
   return (
     <div>
       <button onClick={onClickEnter}>입장</button>
@@ -24,6 +20,17 @@ const Say = () => {
       <button onClick={() => setColor('red')}>메세지 빨강으로 변경</button>
       <button onClick={() => setColor('green')}>메세지 초록으로 변경</button>
       <button onClick={() => setColor('blue')}>메세지 파랑으로 변경</button>
+
+      <button
+        onClick={() => {
+          const arr2 = [...this.state.arr];
+          return setArr(arr2, () => {
+            console.log('Test');
+          });
+        }}
+      >
+        배열값 변경
+      </button>
     </div>
   );
 };
