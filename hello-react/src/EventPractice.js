@@ -1,21 +1,20 @@
 import { useState } from 'react';
 
 const EventPractice = () => {
-  const [{ username, message }, setState] = useState({
+  const [form, setForm] = useState({
     username: '',
     message: '',
   });
 
   const handleChange = (e) => {
-    setState({
-      username: username,
-      message: message,
-      [e.target.name]: e.target.value,
-    });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
+
+  const { username, message } = form;
+
   const handleClick = () => {
     alert(username + ': ' + message);
-    setState({
+    setForm({
       username: '',
       message: '',
     });
