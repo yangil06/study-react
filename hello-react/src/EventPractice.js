@@ -1,13 +1,15 @@
 import { useState } from 'react';
 
 const EventPractice = () => {
-  const [{ username, message }, setState] = useState({
+  const [inputs, setState] = useState({
     username: '',
     message: '',
   });
 
+  const { username, message } = inputs;
+
   const handleChange = (e) => {
-    setState({ [e.target.name]: e.target.value });
+    setState({ ...inputs, [e.target.name]: e.target.value });
   };
   const handleClick = () => {
     alert(username + ': ' + message);
