@@ -12,6 +12,7 @@ import Say from './Say';
 
 import EventPractice from './EventPractice';
 import ValidationSample from './ValidationSample';
+import ScrollBox from './ScrollBox';
 
 //class App extends Component {
 //  render() {
@@ -43,6 +44,7 @@ class App extends Component {
           >
             Learn React
           </a>
+          <ScrollBox />
           <ValidationSample />
           <EventPractice />
           {this.number}
