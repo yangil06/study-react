@@ -23,10 +23,19 @@ class Counter extends Component {
         <h1>{number}</h1>
         <h2>바뀌지 않는 값 : {fixedNumber}</h2>
         <button
+          // onClick={(prevState, state) => {
+          //   console.log(prevState.number); //undefined 로 출력됨
+          //   this.setState(
+          //     { number: prevState.number + 1 } //아예 위에서부터 안되는군..
+          //   );
+          // }}
+          // prevState 이 undefined 로 초기화 되서 레퍼런스로만 오는거 같다.
           onClick={(prevState, state) => {
-            console.log(prevState.number); //undefined 로 출력됨
             this.setState(
-              { number: prevState.number + 1 } //아예 위에서부터 안되는군..
+              (prevState = () => {
+                return { number: prevState.number + 1 }; //prevState을 리턴해주는거니까
+                //객체-Dic 형태로 리턴해준다.
+              })
             );
           }}
         >
