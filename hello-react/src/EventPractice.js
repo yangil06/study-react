@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
 
 class EventPractice extends Component {
-  state = { message: '' };
-
-  constructor(props) {
-    super(props);
-    //this.handleChange = this.handleChange.bind(this);
-    //this.handleClick = this.handleClick.bind(this);
-  }
+  state = {
+    username: '',
+    message: '',
+  };
 
   handleChange = (e) => {
-    console.log(e); //SyntheticBaseEvent 는 이벤트가 발생시에만 값이 있고 그 후에 초기화 되서
-    //이벤트 함수 실행 후 참조할 수 없다.
-
-    //this.setState(e.target.value);
-    this.setState({ message: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
   handleClick = () => {
-    alert(this.state.message);
-    this.setState({ message: '' });
+    alert(this.state.username + ': ' + this.state.message);
+    this.setState({
+      username: '',
+      message: '',
+    });
   };
 
   render() {
@@ -29,10 +25,18 @@ class EventPractice extends Component {
         <h1>이벤트 연습</h1>
         <input
           type="text"
+          name="username"
+          placeholder="username"
+          onChange={this.handleChange}
+        ></input>
+        <br></br>
+        <input
+          type="text"
           name="message"
           placeholder="type anything"
           onChange={this.handleChange}
         ></input>
+        <br></br>
         <button onClick={this.handleClick}>message값 확인</button>
       </div>
     );
