@@ -39,6 +39,15 @@ class Counter extends Component {
               console.log('prop = ' + prop);
               return { number: prevState.number + 1 };
             });
+
+            //prop은 인자에서 생략 가능, 두번 펑터를 보냈으니, 이제 +2
+            this.setState((prevState) => {
+              const { number, fixedNumber } = prevState;
+              console.log(
+                `prevState.number = ${number}, fixedNum = ${fixedNumber}`
+              );
+              return { number: prevState.number + 1 };
+            });
           }}
         >
           +1
