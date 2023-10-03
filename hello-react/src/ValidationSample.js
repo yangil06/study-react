@@ -24,6 +24,7 @@ class ValidationSample extends Component {
         //this.state.clicked = false;
       }
     );
+    this.input.focus();
   };
 
   render() {
@@ -40,6 +41,10 @@ class ValidationSample extends Component {
                 : 'failure'
               : ''
           }
+          //ref={this.input}
+          ref={(ref) => {
+            this.input = ref;
+          }}
         ></input>
         <button onClick={this.handleButtonClick}>검증하기</button>
       </div>
