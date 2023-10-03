@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import './ValidationSample.css';
 
 class ValidationSample extends Component {
+  input = createRef();
+
   state = {
     password: '',
     clicked: false,
@@ -24,7 +26,7 @@ class ValidationSample extends Component {
         //this.state.clicked = false;
       }
     );
-    this.input.focus();
+    this.input.current.focus();
   };
 
   render() {
@@ -41,10 +43,10 @@ class ValidationSample extends Component {
                 : 'failure'
               : ''
           }
-          //ref={this.input}
-          ref={(ref) => {
-            this.input = ref;
-          }}
+          ref={this.input}
+          //   ref={(ref) => {
+          //     this.input = ref;
+          //   }}
         ></input>
         <button onClick={this.handleButtonClick}>검증하기</button>
       </div>
