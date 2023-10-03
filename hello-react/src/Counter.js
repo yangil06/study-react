@@ -48,6 +48,8 @@ class Counter extends Component {
               );
               return { number: prevState.number + 1 };
             });
+
+            this.setState((prevState) => number: prevState.number + 1);
           }}
         >
           +1
