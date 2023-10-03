@@ -9,10 +9,10 @@
 import PropTypes from 'prop-types';
 
 //prop is replaced with destructing assignment
-const MyComponent = ({ name, children, default_prop, designatedType }) => (
+const MyComponent = ({ name, default_prop, designatedType, children }) => (
   <div>
     Hi, My name is {name}. This is to test children prop : {children}
-    and, this is test for default prop 'default_prop : ' {default_prop}
+    &nbsp; and, this is test for default prop 'default_prop : ' {default_prop}
   </div>
 );
 // const MyComponent = (props) => {
