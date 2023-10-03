@@ -24,7 +24,10 @@ class Counter extends Component {
         <h2>바뀌지 않는 값 : {fixedNumber}</h2>
         <button
           onClick={(prevState, state) => {
-            this.setState({ number: prevState.number + 1 });
+            console.log(prevState.number); //undefined 로 출력됨
+            this.setState(
+              { number: prevState.number + 1 } //아예 위에서부터 안되는군..
+            );
           }}
         >
           +1
