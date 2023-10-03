@@ -24,6 +24,7 @@ class Counter extends Component {
         <h2>바뀌지 않는 값 : {fixedNumber}</h2>
         <button
           onClick={() => {
+            this.setState({ number: number + 2 });
             this.setState({ number: number + 1 });
           }}
         >
