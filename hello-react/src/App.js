@@ -44,7 +44,13 @@ class App extends Component {
           >
             Learn React
           </a>
-          <ScrollBox />
+          <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
+          <button onClick={() => this.scrollBox.scrollToBottom()}>
+            {
+              //처음에는 scrollToBottom이undefine 라서 ()를 부르면서 로딩하는게 좋음}
+            }
+            ToBottom
+          </button>
           <ValidationSample />
           <EventPractice />
           {this.number}
