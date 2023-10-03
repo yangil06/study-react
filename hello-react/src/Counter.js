@@ -31,10 +31,15 @@ class Counter extends Component {
           // }}
           // prevState 이 undefined 로 초기화 되서 레퍼런스로만 오는거 같다.
           onClick={() => {
-            this.setState((prevState, state) => {
-              return { number: prevState.number + 1 }; //prevState을 리턴해주는거니까
-              //객체-Dic 형태로 리턴해준다.
-            });
+            this.setState(
+              (prevState = () => {
+                return {
+                  number: number + 1,
+                  fixedNumber: 0,
+                }; //prevState을 리턴해주는거니까
+                //객체-Dic 형태로 리턴해준다.
+              })
+            );
           }}
         >
           +1
