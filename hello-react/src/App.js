@@ -6,6 +6,8 @@ import { Component } from 'react';
 //import { MyComponent } from './MyComponent';
 import MyComponent from './MyComponent';
 
+import Counter from './Counter';
+
 //class App extends Component {
 //  render() {
 const App = () => {
@@ -61,6 +63,7 @@ const App = () => {
         <input />
         {/* 안나오는 주석도 자바스크립트 코드처럼 {} 내부에 작성해야 한다*/}
         /* 이건 나오나? 나오네 */ //이것도 나오고..
+        <Counter />
       </header>
     </div>
   );
