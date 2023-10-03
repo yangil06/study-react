@@ -1,15 +1,17 @@
 import { useState } from 'react';
 
 const EventPractice = () => {
-  const [inputs, setState] = useState({
+  const [{ username, message }, setState] = useState({
     username: '',
     message: '',
   });
 
-  const { username, message } = inputs;
-
   const handleChange = (e) => {
-    setState({ ...inputs, [e.target.name]: e.target.value });
+    setState({
+      username: username,
+      message: message,
+      [e.target.name]: e.target.value,
+    });
   };
   const handleClick = () => {
     alert(username + ': ' + message);
@@ -32,6 +34,7 @@ const EventPractice = () => {
         name="username"
         placeholder="username"
         onChange={handleChange}
+        value={username}
       ></input>
       <br></br>
       <input
@@ -40,6 +43,7 @@ const EventPractice = () => {
         placeholder="type anything"
         onChange={handleChange}
         onKeyDown={handleKeyDown}
+        value={message}
       ></input>
       <br></br>
       <button onClick={handleClick}>message값 확인</button>
