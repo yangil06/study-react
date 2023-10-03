@@ -10,6 +10,8 @@ import Counter from './Counter';
 
 import Say from './Say';
 
+import EventPractice from './EventPractice';
+
 //class App extends Component {
 //  render() {
 const App = () => {
@@ -39,6 +41,7 @@ const App = () => {
         >
           Learn React
         </a>
+        <EventPractice />
         {number}
         {undefined_}
         {false}
