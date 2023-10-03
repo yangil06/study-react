@@ -11,6 +11,8 @@ const Say = () => {
   //그렇다면 배열이나 객체를 업데이트 하려면 어떡할까?
   const [arr, setArr] = useState([1, 2]);
 
+  const testMultilineReturn = (props) => <div>Hi, my name is {props.name}</div>;
+
   return (
     <div>
       <button onClick={onClickEnter}>입장</button>
