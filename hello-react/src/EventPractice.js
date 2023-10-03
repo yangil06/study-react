@@ -16,6 +16,11 @@ class EventPractice extends Component {
       message: '',
     });
   };
+  handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      this.handleClick();
+    }
+  };
 
   render() {
     //Component를 상속받아서 render 생성자 작성해주는것인가?
@@ -35,6 +40,7 @@ class EventPractice extends Component {
           name="message"
           placeholder="type anything"
           onChange={this.handleChange}
+          onKeyDown={this.handleKeyDown}
         ></input>
         <br></br>
         <button onClick={this.handleClick}>message값 확인</button>
