@@ -11,13 +11,13 @@ class Counter extends Component {
     };
   }*/
 
-  state = {
+  state2 = {
     number: 0,
     fixedNumber: 0,
   };
 
   render() {
-    const { number, fixedNumber } = this.state;
+    const { number, fixedNumber } = this.state2;
     return (
       <div>
         <h1>{number}</h1>
