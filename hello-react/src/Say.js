@@ -23,10 +23,11 @@ const Say = () => {
 
       <button
         onClick={() => {
-          const arr2 = [...this.state.arr];
+          const arr2 = [...arr];
           return setArr(arr2, () => {
             console.log('Test');
           });
+          /*react-dom.development.js:86 Warning: State updates from the useState() and useReducer() Hooks don't support the second callback argument. To execute a side effect after rendering, declare it in the component body with useEffect(). */
         }}
       >
         배열값 변경
